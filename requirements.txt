@@ -11,3 +11,4 @@ pydantic
 torch
 transformers
 uvicorn
+scikit-learn
