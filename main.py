@@ -476,9 +476,3 @@ async def recognize_and_parse_prescription(file: UploadFile = File(...)):
 
     except Exception as e:
         return {"error": f"Error: {str(e)}"}
-
-
-
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
