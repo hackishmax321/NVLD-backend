@@ -11,4 +11,5 @@ pydantic
 torch
 transformers
 uvicorn
+gunicorn
 scikit-learn
