@@ -23,6 +23,7 @@ import pandas as pd
 import joblib
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import os
 
 # Initialize the FastAPI app
 app = FastAPI()
@@ -476,3 +477,7 @@ async def recognize_and_parse_prescription(file: UploadFile = File(...)):
 
     except Exception as e:
         return {"error": f"Error: {str(e)}"}
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
+    uvicorn.run(app, host="0.0.0.0", port=port)
